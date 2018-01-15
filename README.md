@@ -1,5 +1,5 @@
 # ToolHelp32ConsoleApp
-This is my answer to a question on stackoverflow.com: 
+This is the reusable part along with an exmaple of my answer to a question on stackoverflow.com: 
 
 https://stackoverflow.com/questions/394816/how-to-get-parent-process-in-net-in-managed-way/48249443#48249443
 
