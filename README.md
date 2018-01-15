@@ -5,4 +5,4 @@ https://stackoverflow.com/questions/394816/how-to-get-parent-process-in-net-in-m
 
 It wraps the tool help library for c# in the consideration of the balance between light-weighting and design patterns. 
 
-18-1-2018: Implementation for `HEAPENTRY32` is not currently present. 
+18-1-2018: The implementation for `HEAPENTRY32` is not currently present. 
