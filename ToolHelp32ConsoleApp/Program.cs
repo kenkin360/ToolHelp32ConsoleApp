@@ -23,7 +23,7 @@ class Program {
 	static void EnumerateProcessesTwice() {
 		var provider = new CustomFormatter { };
 
-		var entries = Toolhelp32.CreateSnapshot<WinProcessEntry>(Toolhelp32.SnapProcess, 0);
+		var entries = Toolhelp32.TakeSnapshot<WinProcessEntry>(Toolhelp32.SnapProcess, 0);
 
 		foreach(var x in entries) {
 			Debug.WriteLine(String.Format(provider, "1 .. {0}", x));
@@ -38,7 +38,7 @@ class Program {
 	static void EnumerateThreads() {
 		var provider = new CustomFormatter { };
 
-		foreach(var x in Toolhelp32.CreateSnapshot<WinThreadEntry>(Toolhelp32.SnapThread, 0)) {
+		foreach(var x in Toolhelp32.TakeSnapshot<WinThreadEntry>(Toolhelp32.SnapThread, 0)) {
 			Debug.WriteLine(String.Format(provider, ".. {0}", x));
 		}
 	}
@@ -46,7 +46,7 @@ class Program {
 	static void EnumerateModules() {
 		var provider = new CustomFormatter { };
 
-		foreach(var x in Toolhelp32.CreateSnapshot<WinModuleEntry>(Toolhelp32.SnapModule, 0)) {
+		foreach(var x in Toolhelp32.TakeSnapshot<WinModuleEntry>(Toolhelp32.SnapModule, 0)) {
 			Debug.WriteLine(String.Format(provider, ".. {0}", x));
 		}
 	}
@@ -55,7 +55,7 @@ class Program {
 		var provider = new CustomFormatter { };
 		var id = Process.GetCurrentProcess().Id;
 
-		foreach(var x in Toolhelp32.CreateSnapshot<WinHeap32ListEntry>(Toolhelp32.SnapHeapList, id)) {
+		foreach(var x in Toolhelp32.TakeSnapshot<WinHeap32ListEntry>(Toolhelp32.SnapHeapList, id)) {
 			Debug.WriteLine(String.Format(provider, ".. {0}", x));
 		}
 	}
